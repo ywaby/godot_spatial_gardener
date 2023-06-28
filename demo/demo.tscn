@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://vgsk5qwph3fi"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="env" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(-6.6513, -4.04098, -5.69753, 4.69356, 5.99872, 4.54296, 6.37521, -10.5668)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="env"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162955, 0)
