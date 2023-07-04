@@ -16,7 +16,7 @@ class_name Arborist
 
 
 var MMI_container:Node3D = null
-var octree_managers:Array
+var octree_managers:Array[MMIOctreeManager]
 
 var gardening_collision_mask:int = 0
 
@@ -349,11 +349,9 @@ func _action_apply_changes(changes):
 
 
 # Replace LOD_Variants inside of a shared array owned by this OctreeManager
-func refresh_octree_shared_LOD_variants(plant_index:int, LOD_variants:Array):
+func refresh_octree_shared_LOD_variants(plant_index:int, LOD_variants:Array[Resource]):
 	if octree_managers.size() > plant_index:
-		octree_managers[plant_index].set_LOD_variants(LOD_variants)
-
-
+		octree_managers[plant_index].LOD_variants=LOD_variants
 # Add changes to corresponding OctreeManager queues
 # Then process them all at once
 func apply_stroke_update_changes(changes:PaintingChanges):
@@ -450,7 +448,7 @@ func update_LODs():
 
 func _unhandled_input(event):
 	if event is InputEventKey && !event.pressed:
-		if event.scancode == debug_get_dump_tree_key():
+		if event.keycode == debug_get_dump_tree_key():
 			for octree_manager in octree_managers:
 				logger.info(octree_manager.root_octree_node.debug_dump_tree())
 

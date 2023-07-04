@@ -35,7 +35,7 @@ signal cancelled_changes
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
 	
 	set_meta("class", "UI_IF_ApplyChanges")
-	
+	super(__init_val, __labelText, __prop_name, settings)	
 	button = Button.new()
 	button.name = "button"
 	button.size_flags_horizontal = SIZE_EXPAND_FILL
@@ -46,10 +46,9 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 	_base_control = settings._base_control
 	
 	apply_dialog = UI_Dialog_IF.instantiate()
-	apply_dialog.window_title = settings.button_text
+	apply_dialog.title = settings.button_text
 	apply_dialog.connect("confirmed",Callable(self,"on_dialog_confirmed"))
 	apply_dialog.connect("cancelled",Callable(self,"on_dialog_cancelled"))
-	apply_dialog.connect("popup_hide",Callable(self,"on_dialog_hidden"))
 	
 	bound_input_fields = settings.bound_input_fields
 	
@@ -57,6 +56,7 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 
 
 func _ready():
+	super()
 	value_container.add_child(button)
 	_base_control.add_child(apply_dialog)
 	for input_field in bound_input_fields:

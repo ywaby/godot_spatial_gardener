@@ -18,10 +18,7 @@ class_name UI_SidePanel
 
 func _ready():
 	set_meta("class", "UI_SidePanel")
-	
 	ThemeAdapter.assign_node_type(panel_container_tools_nd, "InspectorPanelContainer")
-
-
 
 
 #-------------------------------------------------------------------------------
@@ -38,8 +35,7 @@ func set_tool_ui(control:Control, index:int):
 	panel_container_tools_split_nd.add_child(control)
 	if panel_container_tools_split_nd.get_child_count() > index:
 		panel_container_tools_split_nd.move_child(control, index)
-
-
+		
 # Switch between invalid setup error and normal tool view
 func set_main_control_state(state):
 	current_tab = 0 if state else 1

@@ -10,12 +10,13 @@ class_name MMIOctreeManager
 #-------------------------------------------------------------------------------
 
 @export var root_octree_node:MMIOctreeNode
+		
 @export var LOD_variants: Array[Resource]:
-	set(value):
+	set(variants):
 		LOD_variants.resize(0)
-		for LOD_variant in value:
+		for LOD_variant in variants:
 			LOD_variants.append(LOD_variant)
-			
+		
 @export var LOD_max_distance:float
 @export var LOD_kill_distance:float
 
@@ -273,6 +274,7 @@ func insert_LOD_variant(variant, index:int):
 # Up-to-date LOD variants of an OctreeNode
 func remove_LOD_variant(index:int):
 	LOD_variants.remove_at(index)
+
 
 
 # Up-to-date LOD variants of an OctreeNode

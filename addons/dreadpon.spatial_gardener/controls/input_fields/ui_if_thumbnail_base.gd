@@ -8,14 +8,14 @@ class_name UI_IF_ThumbnailBase
 
 
 
-const UI_ActionThumbnail = preload("action_thumbnail/ui_action_thumbnail.tscn")
-const UI_ActionThumbnailCreateInst = preload("action_thumbnail/ui_action_thumbnail_create_inst.tscn")
+const ui_action_thumbnail = preload("action_thumbnail/ui_action_thumbnail.tscn")
+const ui_action_thumbnail_create_inst = preload("action_thumbnail/ui_action_thumbnail_create_inst.tscn")
 
-const PRESET_NEW:Array = [UI_Action_Thumbnail.InteractionFlags.PRESS]
-const PRESET_DELETE:Array = [UI_Action_Thumbnail.InteractionFlags.CLEAR, UI_Action_Thumbnail.InteractionFlags.DELETE]
-const PRESET_PLANT_STATE:Array = [UI_Action_Thumbnail.InteractionFlags.DELETE, UI_Action_Thumbnail.InteractionFlags.SET_DRAG, UI_Action_Thumbnail.InteractionFlags.PRESS, UI_Action_Thumbnail.InteractionFlags.CHECK, UI_Action_Thumbnail.InteractionFlags.SHOW_COUNT, UI_Action_Thumbnail.InteractionFlags.EDIT_LABEL]
-const PRESET_LOD_VARIANT:Array = [UI_Action_Thumbnail.InteractionFlags.DELETE, UI_Action_Thumbnail.InteractionFlags.PRESS, UI_Action_Thumbnail.InteractionFlags.SET_DRAG, UI_Action_Thumbnail.InteractionFlags.CLEAR]
-const PRESET_RESOURCE:Array = [UI_Action_Thumbnail.InteractionFlags.SET_DIALOG, UI_Action_Thumbnail.InteractionFlags.SET_DRAG, UI_Action_Thumbnail.InteractionFlags.CLEAR]
+const PRESET_NEW:Array = [UI_ActionThumbnail.InteractionFlags.PRESS]
+const PRESET_DELETE:Array = [UI_ActionThumbnail.InteractionFlags.CLEAR, UI_ActionThumbnail.InteractionFlags.DELETE]
+const PRESET_PLANT_STATE:Array = [UI_ActionThumbnail.InteractionFlags.DELETE, UI_ActionThumbnail.InteractionFlags.SET_DRAG, UI_ActionThumbnail.InteractionFlags.PRESS, UI_ActionThumbnail.InteractionFlags.CHECK, UI_ActionThumbnail.InteractionFlags.SHOW_COUNT, UI_ActionThumbnail.InteractionFlags.EDIT_LABEL]
+const PRESET_LOD_VARIANT:Array = [UI_ActionThumbnail.InteractionFlags.DELETE, UI_ActionThumbnail.InteractionFlags.PRESS, UI_ActionThumbnail.InteractionFlags.SET_DRAG, UI_ActionThumbnail.InteractionFlags.CLEAR]
+const PRESET_RESOURCE:Array = [UI_ActionThumbnail.InteractionFlags.SET_DIALOG, UI_ActionThumbnail.InteractionFlags.SET_DRAG, UI_ActionThumbnail.InteractionFlags.CLEAR]
 
 
 var element_interaction_flags:Array = []
@@ -43,7 +43,7 @@ signal requested_edit_input_fields
 
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
 	set_meta("class", "UIIF_ThumbnailArray")
-	
+	super(__init_val, __labelText, __prop_name, settings)
 	_base_control = settings._base_control
 	accepted_classes = settings.accepted_classes
 	element_interaction_flags = settings.element_interaction_flags
@@ -54,7 +54,6 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 	add_file_dialog_filter()
 	file_dialog.current_dir = "res://"
 	file_dialog.current_path = "res://"
-	file_dialog.connect("popup_hide",Callable(self,"file_dialog_hidden"))
 	
 	value_container.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	value_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -119,7 +118,7 @@ func set_thumb_interaction_feature(thumb, interaction_flag:int, val):
 
 # Generate a regular action thumbnail
 func _generate_thumbnail():
-	var thumb := UI_ActionThumbnail.instantiate()
+	var thumb := ui_action_thumbnail.instantiate()
 	thumb.init(element_display_size, int(float(element_display_size) * 0.24), element_interaction_flags)
 	thumb.connect("requested_delete",Callable(self,"on_requested_delete").bind(thumb))
 	thumb.connect("requested_clear",Callable(self,"on_requested_clear").bind(thumb))
@@ -134,7 +133,7 @@ func _generate_thumbnail():
 
 # Generate an action thumbnail that creates new action thumbnails
 func _generate_thumbnail_create_inst():
-	var thumb := UI_ActionThumbnailCreateInst.instantiate()
+	var thumb := ui_action_thumbnail_create_inst.instantiate()
 	thumb.init(element_display_size, float(element_display_size) * 0.5, PRESET_NEW)
 	thumb.connect("requested_press",Callable(self,"on_requested_add"))
 	

@@ -65,17 +65,17 @@ func select_brush(index:int):
 
 
 func execute():
-	super.execute()
+	super()
 	create_and_start_gardener_editing()
 	gardener.forward_input_events = false
 	stage = 0
 
 
 func finish_execution(results:Array = []):
+	super(results)
 	if gardener:
 		gardener.visible = false
 		gardener.forward_input_events = true
-	super.finish_execution(results)
 
 
 func execute_next_stage():

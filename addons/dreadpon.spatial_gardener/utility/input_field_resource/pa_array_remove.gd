@@ -17,7 +17,7 @@ var index:int = -1
 
 func _init(__prop:String,__val,__index:int):
 	set_meta("class", "PA_ArrayRemove")
-	
+	super(__prop,__val)
 	index = __index
 	can_create_history = true
 

@@ -1,6 +1,6 @@
 @tool
 extends Control
-class_name UI_Action_Thumbnail
+class_name UI_ActionThumbnail
 
 #-------------------------------------------------------------------------------
 # A button with multiple children buttons corresponding to various possible interactions
@@ -66,6 +66,7 @@ func init(_thumb_size:int, _button_size:int, _active_interaction_flags:Array):
 # We have some conditional checks here
 # Because inheriting nodes might ditch some of the functionality
 func _ready():
+#	print_tree_pretty()
 	if has_node("RootButton"):
 		root_button_nd = $RootButton
 		if root_button_nd.has_signal("dropped"):
@@ -86,17 +87,17 @@ func _ready():
 		counter_container_nd = $CounterContainer
 		counter_label_nd = $CounterContainer/CounterLabel
 		counter_label_nd.connect('resized',Callable(self,'counter_resized'))
-		counter_label_nd.add_theme_font_override('font', get_theme().get_font("font", "Label").duplicate())
+		counter_label_nd.add_theme_font_override('font', get_theme_font("font", "Label").duplicate())
 		counter_container_nd.visible = false
 	if has_node("AltTextMargin"):
 		alt_text_margin_nd = $AltTextMargin
 		alt_text_label_nd = $AltTextMargin/AltTextLabel
-		alt_text_label_nd.add_theme_font_override('font', get_theme().get_font("font", "Label").duplicate())
+		alt_text_label_nd.add_theme_font_override('font', get_theme_font("font", "Label").duplicate())
 		theme_adapter.assign_node_type(alt_text_margin_nd, "ExternalMargin")
 		alt_text_label_nd.visible = false
 	if has_node('LabelLineEdit'):
 		label_line_edit_nd = $LabelLineEdit
-		label_line_edit_nd.add_theme_font_override('font', get_theme().get_font("font", "Label").duplicate())
+		label_line_edit_nd.add_theme_font_override('font', get_theme_font("font", "Label").duplicate())
 		theme_adapter.assign_node_type(label_line_edit_nd, "PlantTitleLineEdit")
 		label_line_edit_nd.connect("text_changed",Callable(self,"on_label_edit"))
 		label_line_edit_nd.visible = false
@@ -107,7 +108,6 @@ func _ready():
 	
 	update_size()
 	set_active_interaction_flags(active_interaction_flags)
-
 
 
 
@@ -162,8 +162,9 @@ func update_size_step2():
 		selection_panel_nd.set_size(thumb_rect)
 	
 	if is_instance_valid(check_box_nd):
-		check_box_nd.get_icon("checked").size = button_rect
-		check_box_nd.get_icon("unchecked").size = button_rect
+		# commemt it for size can not set
+		#check_box_nd.get_theme_icon("checked").size = button_rect
+		#check_box_nd.get_theme_icon("unchecked").size = button_rect
 		check_box_nd.set_size(button_rect)
 		check_box_nd.set_position(Vector2(short_button_margin, long_button_margin))
 	
@@ -185,8 +186,8 @@ func update_size_step2():
 		scale_font(label_line_edit_nd, font_scale * 0.9)
 	
 	if is_instance_valid(menu_button_nd):
-		var max_size = max(menu_button_nd.icon.size.x, menu_button_nd.icon.size.y)
-		var stylebox:StyleBoxFlat = menu_button_nd.get_stylebox('normal', 'MenuButton')
+		var max_size = max(menu_button_nd.icon.get_size().x, menu_button_nd.icon.get_size().y)
+		var stylebox:StyleBoxFlat = menu_button_nd.get_theme_stylebox('normal', 'MenuButton')
 		var menu_button_rect = clamp_rect_to_stylebox_margins(button_rect, max_size, stylebox)
 		menu_button_nd.set_size(menu_button_rect)
 		if active_interaction_flags.has(InteractionFlags.EDIT_LABEL):
@@ -207,7 +208,7 @@ func clamp_rect_to_stylebox_margins(rect, content_size, stylebox):
 
 
 func scale_font(node: Control, font_scale: float):
-	var font = node.get_font('font')
+	var font = node.get_theme_font('font')
 	if font is FontFile:
 		font.size *= font_scale
 
@@ -292,7 +293,7 @@ func on_press():
 
 func on_check():
 	if active_interaction_flags.has(InteractionFlags.CHECK):
-		emit_signal("requested_check", check_box_nd.pressed)
+		emit_signal("requested_check", check_box_nd.button_pressed)
 
 func on_label_edit(label_text: String):
 	if active_interaction_flags.has(InteractionFlags.EDIT_LABEL):

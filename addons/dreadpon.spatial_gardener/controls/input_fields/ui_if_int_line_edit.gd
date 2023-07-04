@@ -19,8 +19,8 @@ var value_input:LineEdit = null
 
 
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
+	super(__init_val, __labelText, __prop_name, settings)	
 	set_meta("class", "UI_IF_IntLineEdit")
-	
 	value_input = LineEdit.new()
 	value_input.name = "value_input"
 	value_input.size_flags_horizontal = SIZE_EXPAND_FILL
@@ -37,6 +37,7 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 
 
 func _ready():
+	super()
 	value_container.add_child(value_input)
 	_init_ui()
 
@@ -49,14 +50,15 @@ func _ready():
 
 
 func _update_ui_to_prop_action(prop_action:PropAction, final_val):
+	super(prop_action, final_val)
 	if is_instance_of(prop_action, PA_PropSet) || is_instance_of(prop_action, PA_PropEdit):
 		_update_ui_to_val(final_val)
 
 
 func _update_ui_to_val(val):
+	super(val)
 	val = _string_to_val(val)
-	value_input.text = String(val)
-	super._update_ui_to_val(val)
+	value_input.text = str(val)
 
 
 func _string_to_val(string) -> int:

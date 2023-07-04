@@ -51,7 +51,7 @@ var field_editable_controls:Array = []
 
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
 	set_meta("class", "UI_IF_RealSlider")
-	
+	super(__init_val, __labelText, __prop_name, settings)
 	is_range = settings.is_range
 	value_count = settings.value_count
 	representation_type = settings.representation_type
@@ -114,6 +114,7 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 
 
 func _ready():
+	super()
 	value_container.add_child(vertical_container)
 	_init_ui()
 
@@ -131,6 +132,7 @@ func _update_ui_to_prop_action(prop_action:PropAction, final_val):
 
 
 func _update_ui_to_val(val):
+	super(val)
 	val = _represented_to_actual(val)
 	
 	for range_index in range(0, val.size()):
@@ -138,7 +140,6 @@ func _update_ui_to_val(val):
 			var value_val = val[range_index][value_index]
 			field_editable_controls[range_index][value_index].text = str(float(str("%.3f" % value_val)))
 	
-	super._update_ui_to_val(val.duplicate())
 
 
 func _string_to_val(string) -> float:

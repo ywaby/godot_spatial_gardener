@@ -19,8 +19,8 @@ var enum_selector:OptionButton = null
 
 
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
+	super(__init_val, __labelText, __prop_name, settings)	
 	set_meta("class", "UI_IF_Enum")
-	
 	enum_selector = OptionButton.new()
 	enum_selector.name = "enum_selector"
 	enum_selector.size_flags_horizontal = SIZE_EXPAND_FILL
@@ -33,6 +33,7 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 
 
 func _ready():
+	super()
 	value_container.add_child(enum_selector)
 	_init_ui()
 
@@ -45,10 +46,11 @@ func _ready():
 
 
 func _update_ui_to_prop_action(prop_action:PropAction, final_val):
+	super(prop_action, final_val)
 	if is_instance_of(prop_action, PA_PropSet) || is_instance_of(prop_action, PA_PropEdit):
 		_update_ui_to_val(final_val)
 
 
 func _update_ui_to_val(val):
+	super(val)
 	enum_selector.selected = val
-	super._update_ui_to_val(val)

@@ -10,7 +10,7 @@ var result_list:Array = []
 
 
 func execute():
-	super.execute()
+	super()
 	
 	logger.info("Executing all plant tests")
 	result_list = []

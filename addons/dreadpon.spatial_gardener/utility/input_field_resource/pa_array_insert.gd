@@ -16,6 +16,7 @@ var index:int = -1
 
 
 func _init(__prop:String,__val,__index:int):
+	super(__prop,__val)
 	set_meta("class", "PA_ArrayInsert")
 	
 	index = __index

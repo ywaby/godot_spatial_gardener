@@ -85,7 +85,6 @@ func _ready():
 	
 	init_painter()
 	painter.set_brush_collision_mask(gardening_collision_mask)
-	
 	reload_resources()
 	init_arborist()
 	
@@ -119,7 +118,7 @@ func _apply_changes():
 
 
 func add_child(node:Node, legible_unique_name:bool = false, internal:InternalMode = 0):
-	super.add_child(node, legible_unique_name)
+	super(node, legible_unique_name)
 	update_configuration_warnings()
 
 
@@ -288,10 +287,8 @@ func start_editing(__base_control:Control, __resource_previewer, __undoRedo:Edit
 	_base_control = __base_control
 	_resource_previewer = __resource_previewer
 	_undo_redo = __undoRedo
-	
 	_side_panel = __side_panel
 	connect("changed_initialized_for_edit",Callable(_side_panel,"set_main_control_state"))
-	
 	ui_category_brushes = toolshed.create_ui(_base_control, _resource_previewer)
 	ui_category_plants = greenhouse.create_ui(_base_control, _resource_previewer)
 	_side_panel.set_tool_ui(ui_category_brushes, 0)
@@ -543,7 +540,6 @@ func on_toolshed_prop_action_executed_on_brush(prop_action:PropAction, final_val
 	assert(painter)
 	if !(is_instance_of(prop_action, PA_PropSet)) && !(is_instance_of(prop_action, PA_PropEdit)): return
 	if brush != toolshed.active_brush: return
-	
 	match prop_action.prop:
 		"shape/shape_volume_size":
 			painter.set_active_brush_size(final_val)

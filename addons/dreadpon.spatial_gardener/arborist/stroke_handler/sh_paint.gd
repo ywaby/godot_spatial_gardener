@@ -10,7 +10,7 @@ class_name SH_Paint
 
 
 func _init(_brush:Toolshed_Brush,_plant_states:Array,_octree_managers:Array,_space_state:PhysicsDirectSpaceState3D,_camera: Camera3D,_collision_mask:int):
-	
+	super(_brush,_plant_states,_octree_managers,_space_state,_camera,_collision_mask)
 	set_meta("class", "SH_Paint")
 
 

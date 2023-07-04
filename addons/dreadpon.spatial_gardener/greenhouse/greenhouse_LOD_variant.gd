@@ -21,6 +21,7 @@ var cast_shadow:int = GeometryInstance3D.SHADOW_CASTING_SETTING_ON
 
 
 func _init(__mesh:Mesh = null,__spawned_spatial:PackedScene = null):
+	super()
 	set_meta("class", "Greenhouse_LODVariant")
 	resource_name = "Greenhouse_LODVariant"
 	

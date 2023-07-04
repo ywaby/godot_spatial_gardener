@@ -25,9 +25,6 @@ func _init():
 func _ready():
 	connect("resized",Callable(self,"on_resized"))
 	get_parent().connect("resized",Callable(self,"on_resized"))
-
-
-func _enter_tree():
 	on_resized()
 
 
@@ -56,5 +53,5 @@ func recalc_columns():
 		if child.size.y > biggest_child_size.y:
 			biggest_child_size.y = child.size.y
 	
-	if biggest_child_size.x * (columns + 1) + get_theme().get_constant("h_separation",&"") * columns < target_size.x:
+	if biggest_child_size.x * (columns + 1) + get_theme_constant("h_separation",&"") * columns < target_size.x:
 		columns += 1

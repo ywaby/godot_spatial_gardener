@@ -177,9 +177,9 @@ func _forward_3d_gui_input(camera, event):
 
 func plugin_input(event):
 	if event is InputEventKey && !event.pressed:
-		if event.scancode == debug_get_dump_editor_tree_key():
+		if event.keycode == debug_get_dump_editor_tree_key():
 			debug_dump_editor_tree()
-		elif (event.scancode == get_focus_painter_key()
+		elif (event.keycode == get_focus_painter_key()
 			&& !Input.is_key_pressed(KEY_SHIFT) && !Input.is_key_pressed(KEY_CTRL) && !Input.is_key_pressed(KEY_ALT) && !Input.is_key_pressed(KEY_SYSREQ)):
 			focus_painter()
 
@@ -213,9 +213,9 @@ func focus_painter():
 	call_deferred("restore_gardener_selection")
 
 
-func simulate_key(scancode):
+func simulate_key(keycode):
 	var event = InputEventKey.new()
-	event.scancode = scancode
+	event.keycode = keycode
 	event.button_pressed = true
 	Input.parse_input_event(event)
 

@@ -157,7 +157,7 @@ func forwarded_input(camera:Camera3D, event):
 	# If inactive property edit
 	# And event == overlap mode key
 	# -> cycle overlap modes
-	if brush_prop_edit_flag <= BrushPropEditFlag.NONE && event is InputEventKey && event.scancode == get_overlap_mode_key():
+	if brush_prop_edit_flag <= BrushPropEditFlag.NONE && event is InputEventKey && event.keycode == get_overlap_mode_key():
 		if event.pressed && !event.is_echo():
 			cycle_overlap_modes()
 		handled = true
@@ -165,7 +165,7 @@ func forwarded_input(camera:Camera3D, event):
 	# If inactive property edit/modifier key pressed
 	# And event == modifier key pressed
 	# -> remember/forget the modifier
-	if brush_prop_edit_flag <= BrushPropEditFlag.NONE && event is InputEventKey && event.scancode == get_property_edit_modifier():
+	if brush_prop_edit_flag <= BrushPropEditFlag.NONE && event is InputEventKey && event.keycode == get_property_edit_modifier():
 		if event.pressed:
 			brush_prop_edit_flag = BrushPropEditFlag.MODIFIER
 		if !event.pressed:

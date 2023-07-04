@@ -11,8 +11,8 @@ class_name SH_Erase
 
 
 func _init(_brush:Toolshed_Brush, _plant_states:Array, _octree_managers:Array, _space_state:PhysicsDirectSpaceState3D, _camera: Camera3D, _collision_mask:int):
-		set_meta("class", "SH_Erase")
-
+	super(_brush,_plant_states,_octree_managers,_space_state,_camera,_collision_mask)
+	set_meta("class", "SH_Erase")
 
 func volume_get_stroke_update_changes(brush_data:Dictionary, plant:Greenhouse_Plant, plant_index:int, octree_manager:MMIOctreeManager, 
 	brush_placement_area:BrushPlacementArea, container_transform:Transform3D, painting_changes:PaintingChanges):

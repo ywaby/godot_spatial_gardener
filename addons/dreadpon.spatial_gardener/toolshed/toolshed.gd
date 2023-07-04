@@ -32,6 +32,7 @@ signal prop_action_executed_on_brush(prop_action, final_val, brush)
 
 
 func _init(__brushes:Array = []):
+	super()
 	set_meta("class", "ToolShed")
 	resource_name = "ToolShed"
 	
@@ -56,7 +57,6 @@ func create_ui(__base_control:Control, __resource_previewer):
 		var vbox_container_properties = section_brush.find_child('VBoxContainer_Properties')
 		section_brush.name = FunLib.capitalize_string_array(brush.BrushType.keys())[brush.behavior_brush_type]
 		tab_container_brushes_nd.add_child(section_brush)
-		
 		for input_field in brush.create_input_fields(_base_control, _resource_previewer):
 			vbox_container_properties.add_child(input_field)
 		
@@ -88,7 +88,7 @@ func forwarded_input(camera, event):
 	
 	if event is InputEventKey && !event.pressed:
 		var index_map := [KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0]
-		index_tab = index_map.find(event.scancode)
+		index_tab = index_map.find(event.keycode)
 		
 		if index_tab >= 0 && index_tab < brushes.size():
 			handled = true
@@ -139,7 +139,7 @@ func on_prop_action_executed_on_brush(prop_action:PropAction, final_val, brush):
 
 
 func set_undo_redo(val:EditorUndoRedoManager):
-	super.set_undo_redo(val)
+	super(val)
 	for brush in brushes:
 		brush.set_undo_redo(_undo_redo)
 

@@ -25,7 +25,7 @@ var _resource_previewer = null
 
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
 	set_meta("class", "UI_IF_Object")
-	
+	super(__init_val, __labelText, __prop_name, settings)	
 	margin_container = PanelContainer.new()
 	margin_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	margin_container.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -43,6 +43,7 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 
 
 func _ready():
+	super()
 	margin_container.add_child(input_field_container)
 	value_container.add_child(margin_container)
 	
@@ -98,6 +99,7 @@ func _update_ui_to_prop_action(prop_action:PropAction, final_val):
 
 
 func _update_ui_to_val(val):
+	super(val)
 	if is_instance_valid(val):
 		rebuild_object_input_fields(val)
 		visibility_forced = -1
@@ -106,4 +108,3 @@ func _update_ui_to_val(val):
 		rebuild_object_input_fields(null)
 		visibility_forced = 0
 		visible = false
-	super._update_ui_to_val(val)

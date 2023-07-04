@@ -20,8 +20,8 @@ var value_input:LineEdit = null
 
 
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
+	super(__init_val, __labelText, __prop_name, settings)
 	set_meta("class", "UI_IF_RealSlider")
-	
 	real_slider = HSlider.new()
 	real_slider.name = "real_slider"
 	real_slider.size_flags_horizontal = SIZE_EXPAND_FILL
@@ -50,10 +50,11 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 
 
 func _ready():
+	super()
 	value_container.add_child(real_slider)
 	value_container.add_child(value_input)
 	_init_ui()
-
+	
 
 
 
@@ -68,6 +69,7 @@ func _update_ui_to_prop_action(prop_action:PropAction, final_val):
 
 
 func _update_ui_to_val(val):
+	super(val)
 	val = _string_to_val(val)
 	# So uhm... the signal is emitted when setting value through a variable too
 	# And I only want to emit it checked UI interaction, so disconnect and then reconnect the signal
@@ -77,7 +79,6 @@ func _update_ui_to_val(val):
 	
 	value_input.text = str(float(str("%.3f" % val)))
 	
-	super._update_ui_to_val(val)
 
 
 func _slider_drag_ended(value_changed: bool, prop_action_class:String):

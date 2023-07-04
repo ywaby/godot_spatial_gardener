@@ -5,7 +5,7 @@ extends TestGardenerBase
 
 
 func execute():
-	super.execute()
+	super()
 	logger.info("Executing test")
 	painting_data = GardenerUtils.populate_node_with_surfaces(self, true, true)
 

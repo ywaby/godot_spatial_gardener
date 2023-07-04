@@ -22,7 +22,7 @@ func _ready():
 	set_nesting_level(nesting_level)
 	
 	if get_parent() is BoxContainer:
-		var separation = get_parent().get_theme().get_constant('separation')
+		var separation = get_parent().get_theme_constant('separation')
 		add_theme_constant_override('offset_bottom', -separation)
 
 

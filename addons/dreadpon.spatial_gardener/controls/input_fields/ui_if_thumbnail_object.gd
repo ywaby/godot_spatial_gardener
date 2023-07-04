@@ -22,9 +22,10 @@ var _thumb = null
 
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
 	set_meta("class", "UI_IF_ThumbnailObject")
-
-
+	super(__init_val, __labelText, __prop_name, settings)
+	
 func _ready():
+	super()
 	_thumb = _generate_thumbnail()
 	value_container.add_child(_thumb)
 	_init_ui()
@@ -43,6 +44,7 @@ func _update_ui_to_prop_action(prop_action:PropAction, final_val):
 
 
 func _update_ui_to_val(val):
+	super(val)
 	_queue_thumbnail(val, _thumb)
 
 
@@ -62,6 +64,7 @@ func on_requested_clear(thumb):
 
 
 func on_check(state, thumb):
+	print_debug('check from obj')
 	emit_signal("requested_check", 0, state)
 
 

@@ -25,9 +25,9 @@ static func clear_children(node):
 # Kinda wish Godot had a built-in one
 static func ensure_signal(source:Object, _signal:String, target:Object, method:String, binds:Array = [], flags:int = 0):
 	if !source.is_connected(_signal,Callable(target,method)):
-		source.connect(_signal,Callable(target,method).bind(binds),flags)
-
-
+		if binds==[]:
+			source.connect(_signal,Callable(target,method),flags)
+		else:source.connect(_signal,Callable(target,method).bindv(binds),flags)
 
 
 #-------------------------------------------------------------------------------

@@ -26,6 +26,7 @@ signal req_octree_recenter(plant)
 
 
 func _init():
+	super()
 	set_meta("class", "Greenhouse_PlantState")
 	resource_name = "Greenhouse_PlantState"
 	# A workaround to trigger the initial creation of a plant
@@ -90,7 +91,7 @@ func _modify_prop(prop:String, val):
 
 
 func set_undo_redo(val:EditorUndoRedoManager):
-	super.set_undo_redo(val)
+	super(val)
 	plant.set_undo_redo(_undo_redo)
 
 

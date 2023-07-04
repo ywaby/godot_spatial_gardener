@@ -79,9 +79,8 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 		tab_index = settings.tab
 	
 	
-	
-	set_stylebox(get_theme().get_stylebox('panel', 'PanelContainer'))
-	push_warning("remove this warning if working fine, just testing set_stylebox")
+	if get_theme():
+		set_stylebox(get_theme_stylebox('panel', 'PanelContainer'))
 	
 	set_tooltip(tooltip)
 
@@ -98,7 +97,7 @@ func _ready():
 func _set_tab(index:int):
 	tab_index = index
 	tab_spacer.custom_minimum_size.x = tab_index * tab_size
-	tab_spacer.size.x = tab_spacer.minimum_size.x
+	tab_spacer.size.x = tab_spacer.get_minimum_size().x
 	tab_spacer.visible = false if tab_index <= 0 else true
 	
 	if tab_index > 0:
@@ -144,14 +143,13 @@ func on_prop_action_executed(prop_action:PropAction, final_val):
 
 
 func on_prop_list_changed(prop_dict: Dictionary):
-	print_debug("PROP LIST CHANGED")
-	print_debug(prop_dict)
+	if prop_name =='':
+		return
+	
 	if visibility_forced >= 0:
 		visible = true if visibility_forced == 1 else false
-		print_debug("Visibility force")
 	else:
 		visible =  prop_dict[prop_name].usage & PROPERTY_USAGE_EDITOR
-		print_debug("not forced")
 
 
 # Actually respond to different prop_actions
@@ -207,7 +205,7 @@ func _request_prop_action(val, prop_action_class:String, optional:Dictionary = {
 func on_node_received_input(event, node):
 	if node.has_focus():
 		if event is InputEventKey && !event.pressed:
-			if event.scancode == KEY_ENTER || event.scancode == KEY_ESCAPE:
+			if event.keycode == KEY_ENTER || event.keycode == KEY_ESCAPE:
 				node.release_focus()
 
 

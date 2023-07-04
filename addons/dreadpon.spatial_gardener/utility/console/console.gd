@@ -23,7 +23,7 @@ func _ready():
 
 
 func _unhandled_input(event):
-	if event is InputEventKey && event.scancode == KEY_QUOTELEFT && !event.pressed:
+	if event is InputEventKey && event.keycode == KEY_QUOTELEFT && !event.pressed:
 		toggle_console()
 	
 	if !visible: return
@@ -32,7 +32,7 @@ func _unhandled_input(event):
 		get_tree().set_input_as_handled()
 		
 		if !event.pressed:
-			match event.scancode:
+			match event.keycode:
 				KEY_ENTER:
 					input_field.text = input_field.text.trim_suffix("\n")
 					try_execute_command()

@@ -28,9 +28,9 @@ var behavior_no_settings_text: String = 'This brush has no additional settings'
 
 
 func _init(__behavior_brush_type:int = BrushType.PAINT,__behavior_strength:float = 1.0,__shape_volume_size:float = 1.0,__shape_projection_size:float = 1.0,__behavior_passthrough: bool = false,__behavior_overlap_mode: int = OverlapMode.VOLUME):
+	super()
 	set_meta("class", "Toolshed_Brush")
 	resource_name = "Toolshed_Brush"
-	
 	input_field_blacklist = ['behavior/behavior_brush_type']
 	behavior_brush_type = __behavior_brush_type
 	behavior_strength = __behavior_strength
@@ -42,7 +42,6 @@ func _init(__behavior_brush_type:int = BrushType.PAINT,__behavior_strength:float
 
 func _create_input_field(_base_control:Control, _resource_previewer, prop:String):
 	var input_field:UI_InputField = null
-	
 	match prop:
 		"shape/shape_volume_size":
 			var max_value = FunLib.get_setting_safe("dreadpons_spatial_gardener/input_and_ui/brush_volume_size_slider_max_value", 100.0)

@@ -1,5 +1,5 @@
 @tool
-extends UI_Action_Thumbnail
+extends UI_ActionThumbnail
 class_name UI_ActionThumbnailCreateInst
 
 
@@ -18,10 +18,10 @@ func _init():
 
 
 func update_size_step2():
+	super()
 	var button_rect = Vector2(button_size, button_size)
 	var to_margin = float(thumb_size - button_size) * 0.5
 	
-	super.update_size_step2()
 	
 	texture_rect_nd.set_size(button_rect)
 	texture_rect_nd.set_position(Vector2(to_margin, to_margin))

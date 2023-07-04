@@ -15,7 +15,7 @@ enum DirectionVectorType {UNUSED, WORLD_X, WORLD_Y, WORLD_Z, NORMAL, CUSTOM}
 
 
 # Different LODs for a plant starting from the most detailed
-var mesh_LOD_variants:Array = []
+var mesh_LOD_variants:Array[Resource] = []
 # Keep a reference to selected resource to easily display it
 var selected_for_edit_resource:Resource = null
 # Distance after which the final LOD is shown
@@ -103,6 +103,7 @@ signal prop_action_executed_on_LOD_variant(prop_action, final_val, LOD_variant)
 
 func _init():
 	set_meta("class", "Greenhouse_Plant")
+	super()
 	resource_name = "Greenhouse_Plant"
 	
 	input_field_blacklist = ["mesh/mesh_LOD_max_capacity", "mesh/mesh_LOD_min_size"]
@@ -414,7 +415,7 @@ func request_prop_action(prop_action:PropAction):
 
 
 func set_undo_redo(val:EditorUndoRedoManager):
-	super.set_undo_redo(val)
+	super(val)
 	for LOD_variant in mesh_LOD_variants:
 		LOD_variant.set_undo_redo(_undo_redo)
 

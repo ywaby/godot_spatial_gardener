@@ -1,4 +1,1276 @@
-[gd_scene format=3 uid="uid://vgsk5qwph3fi"]
+[gd_scene load_steps=140 format=3 uid="uid://vgsk5qwph3fi"]
+
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/gardener/gardener.gd" id="1_hhml7"]
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/arborist/arborist.gd" id="2_hmnyj"]
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/greenhouse/greenhouse_LOD_variant.gd" id="3_3poox"]
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_node.gd" id="3_h61am"]
+[ext_resource type="ArrayMesh" uid="uid://buh7vhk8y2hkc" path="res://demo/stone.mesh" id="3_q3sta"]
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/arborist/mmi_octree/mmi_octree_manager.gd" id="4_7jjvu"]
+[ext_resource type="Script" path="res://addons/dreadpon.spatial_gardener/arborist/placement_transform.gd" id="5_7nadq"]
+
+[sub_resource type="Resource" id="Resource_32n05"]
+resource_name = "Greenhouse_LODVariant"
+script = ExtResource("3_3poox")
+mesh = ExtResource("3_q3sta")
+cast_shadow = 1
+metadata/class = "Greenhouse_LODVariant"
+
+[sub_resource type="Resource" id="Resource_xppbu"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-1.92682, 2.38419e-07, 1.98739)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(0.20572, 0, 0.978611, 0, 1, 0, -0.978611, 0, 0.20572, -1.92682, 2.38419e-07, 1.98739)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_apyfk"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(1.69532, 0, 1.30238)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(0.615111, 0, -0.78844, 0, 1, 0, 0.78844, 0, 0.615111, 1.69532, 0, 1.30238)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_7asse"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(2.89035, 0, 3.20501)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(-0.505896, 0, -0.862595, 0, 1, 0, 0.862595, 0, -0.505896, 2.89035, 0, 3.20501)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_deja1"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(0.48932, 1.19209e-07, 3.37582)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.581943, 0, -0.813229, 0, 1, 0, 0.813229, 0, -0.581943, 0.48932, 1.19209e-07, 3.37582)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_khe3i"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(2.12116, 2.38419e-07, 6.15784)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(0.695888, 0, 0.71815, 0, 1, 0, -0.71815, 0, 0.695888, 2.12116, 2.38419e-07, 6.15784)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_lgllo"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(5.02311, 1.41561e-07, 3.50505)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(0.186056, 0, -0.982539, 0, 1, 0, 0.982539, 0, 0.186056, 5.02311, 1.41561e-07, 3.50505)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_2lv72"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(4.08651, -1.19209e-07, 4.39508)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(-0.49666, 0, -0.867945, 0, 1, 0, 0.867945, 0, -0.49666, 4.08651, -1.19209e-07, 4.39508)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_tqvrp"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-0.778926, 0, 3.1658)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(0.646181, 0, 0.763184, 0, 1, 0, -0.763184, 0, 0.646181, -0.778926, 0, 3.1658)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_80lfu"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(0.9721, 1.19209e-07, 5.11585)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.629546, 0, -0.776963, 0, 1, 0, 0.776963, 0, -0.629546, 0.9721, 1.19209e-07, 5.11585)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_egcox"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(0.583592, 0, 0.86075)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(-0.0789148, 0, 0.996881, 0, 1, 0, -0.996881, 0, -0.0789148, 0.583592, 0, 0.86075)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_ot2hj"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(0.0482554, -2.38419e-07, -2.0194)
+surface_normal = Vector3(-2.51451e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.0246268, 0, 0.999697, 0, 1, 0, -0.999697, 0, -0.0246268, 0.0482554, -2.38419e-07, -2.0194)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_1pti2"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(0.48435, 0, 2.19762)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.9971, 0, 0.0761078, 0, 1, 0, -0.0761078, 0, -0.9971, 0.48435, 0, 2.19762)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_do6v8"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-0.656597, 2.38419e-07, 0.418256)
+surface_normal = Vector3(-1.09292e-13, 1, -4.37116e-08)
+transform = Transform3D(-0.173185, 0, -0.984889, 0, 1, 0, 0.984889, 0, -0.173185, -0.656597, 2.38419e-07, 0.418256)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_tulwo"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-3.46351, -3.72529e-08, -0.488026)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(0.391304, 0, -0.920261, 0, 1, 0, 0.920261, 0, 0.391304, -3.46351, -3.72529e-08, -0.488026)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_3tjfl"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(0.958258, 1.19209e-07, -0.842349)
+surface_normal = Vector3(-1.39128e-13, 1, -4.37116e-08)
+transform = Transform3D(-0.999004, 0, -0.044623, 0, 1, 0, 0.044623, 0, -0.999004, 0.958258, 1.19209e-07, -0.842349)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_x8g2i"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(2.1232, -4.76837e-07, -3.28749)
+surface_normal = Vector3(-2.51451e-15, 1, -4.37114e-08)
+transform = Transform3D(0.723679, 0, 0.690137, 0, 1, 0, -0.690137, 0, 0.723679, 2.1232, -4.76837e-07, -3.28749)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_0v5ig"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(4.01358, -8.9407e-08, -2.28775)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(-0.737488, 0, 0.675361, 0, 1, 0, -0.675361, 0, -0.737488, 4.01358, -8.9407e-08, -2.28775)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_6gau6"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(1.62401, 0, -2.55036)
+surface_normal = Vector3(-2.51451e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.525568, 0, -0.850751, 0, 1, 0, 0.850751, 0, -0.525568, 1.62401, 0, -2.55036)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_j441m"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(3.74208, -1.19209e-07, -2.28821)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(-0.813101, 0, 0.582122, 0, 1, 0, -0.582122, 0, -0.813101, 3.74208, -1.19209e-07, -2.28821)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_7bhia"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-3.71007, -2.38419e-07, -3.35242)
+surface_normal = Vector3(-2.51451e-15, 1, -4.37114e-08)
+transform = Transform3D(0.867312, 0, -0.497766, 0, 1, 0, 0.497766, 0, 0.867312, -3.71007, -2.38419e-07, -3.35242)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_qbqjf"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-1.08714, -1.19209e-07, -1.36877)
+surface_normal = Vector3(-2.51451e-15, 1, -4.37114e-08)
+transform = Transform3D(0.674178, 0, -0.738569, 0, 1, 0, 0.738569, 0, 0.674178, -1.08714, -1.19209e-07, -1.36877)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_f0j3c"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-3.72995, 2.38419e-07, -1.07433)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(0.546696, 0, 0.837331, 0, 1, 0, -0.837331, 0, 0.546696, -3.72995, 2.38419e-07, -1.07433)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_hcco4"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-5.79224, -3.57628e-07, -2.27286)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.894072, 0, 0.447924, 0, 1, 0, -0.447924, 0, -0.894072, -5.79224, -3.57628e-07, -2.27286)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_yyjmg"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-1.28275, 0, -0.719042)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.0275734, 0, -0.99962, 0, 1, 0, 0.99962, 0, -0.0275734, -1.28275, 0, -0.719042)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_2y8dj"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-4.34001, -1.19209e-07, -2.49201)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(0.0806273, 0, -0.996744, 0, 1, 0, 0.996744, 0, 0.0806273, -4.34001, -1.19209e-07, -2.49201)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_mefbl"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-2.20781, 0, -0.714844)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(0.899163, 0, -0.437615, 0, 1, 0, 0.437615, 0, 0.899163, -2.20781, 0, -0.714844)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_l72xf"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-5.94157, 0, 0.221241)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(0.659391, 0, -0.751801, 0, 1, 0, 0.751801, 0, 0.659391, -5.94157, 0, 0.221241)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_bmcpk"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-3.75124, 1.19209e-07, 2.65347)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(0.121044, 0, -0.992647, 0, 1, 0, 0.992647, 0, 0.121044, -3.75124, 1.19209e-07, 2.65347)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_ihpj5"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-5.83869, 0, 1.9249)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(1, 0, 0.000964077, 0, 1, 0, -0.000964077, 0, 1, -5.83869, 0, 1.9249)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_fxt7e"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-3.37327, 4.76837e-07, 3.64783)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(0.309005, 0, -0.951061, 0, 1, 0, 0.951061, 0, 0.309005, -3.37327, 4.76837e-07, 3.64783)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_18lb1"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(4.30514, 4.76837e-07, 8.0986)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(0.015167, -0.0708821, 0.471873, -0.443805, 0.171335, 0.0400018, -0.175288, -0.439931, -0.0604497, 4.30514, 4.76837e-07, 8.0986)
+octree_octant = 3
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_pyoj2"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(4.49202, 2.38419e-07, 5.96418)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(0.306156, 0.420697, 0.599503, 0.469075, -0.611649, 0.189672, 0.562458, 0.281107, -0.484502, 4.49202, 2.38419e-07, 5.96418)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_6416u"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(4.11877, 2.38419e-07, 4.81482)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(-0.442226, 0.448702, 0.186421, -0.226228, -0.413225, 0.457948, 0.430009, 0.244053, 0.432644, 4.11877, 2.38419e-07, 4.81482)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_0ouhi"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(4.55948, 2.38419e-07, 8.87221)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.832294, 0.174687, -0.463319, 0.386584, -0.337001, -0.821509, -0.309408, -0.89096, 0.21989, 4.55948, 2.38419e-07, 8.87221)
+octree_octant = 3
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_0nkhx"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(4.03712, -8.9407e-08, -1.7358)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(-0.00434794, 0.0129276, 0.00017602, 0.00731613, 0.00230706, 0.0112788, 0.0106597, 0.00368959, -0.00766925, 4.03712, -8.9407e-08, -1.7358)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_m3564"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(5.6731, 1.19209e-07, 0.966162)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(0.204434, -0.317423, 0.127879, 0.293673, 0.239201, 0.124267, -0.175688, 0.0304798, 0.356523, 5.6731, 1.19209e-07, 0.966162)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_rxy72"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(3.18005, 2.38419e-07, 0.337759)
+surface_normal = Vector3(0, 1, -4.37114e-08)
+transform = Transform3D(0.0353498, 0.0410496, -0.0717828, -0.0632492, 0.0637106, 0.00528611, 0.0532671, 0.048408, 0.0539141, 3.18005, 2.38419e-07, 0.337759)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_aivvc"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-5.91791, 0, 1.18083)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(0.0393667, -0.0797691, -0.177713, 0.0769044, 0.172943, -0.0605921, 0.178971, -0.0567677, 0.0651265, -5.91791, 0, 1.18083)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_x6ypu"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-4.19265, 1.19209e-07, 2.26632)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.764755, 0.559519, 0.186164, -0.178562, 0.0708275, -0.946397, -0.561991, -0.783894, 0.047368, -4.19265, 1.19209e-07, 2.26632)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_pgw2q"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-3.95222, 1.93715e-07, 4.82817)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.362295, -0.234735, -0.0336024, 0.204962, -0.340847, 0.171176, -0.119248, 0.127319, 0.396305, -3.95222, 1.93715e-07, 4.82817)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_o45tc"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-0.987385, 0, 4.55288)
+surface_normal = Vector3(2.46113e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.00366935, -0.115565, -0.0358047, -0.0717705, -0.0267583, 0.0937218, -0.0973977, 0.0240715, -0.0677129, -0.987385, 0, 4.55288)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_hq77b"]
+resource_name = "PlacementTransform"
+script = ExtResource("5_7nadq")
+placement = Vector3(-6.49139, 2.38419e-07, 3.52902)
+surface_normal = Vector3(-6.57504e-15, 1, -4.37114e-08)
+transform = Transform3D(-0.398325, 0.666615, 0.0423343, -0.164283, -0.0499941, -0.758514, -0.64744, -0.397436, 0.166421, -6.49139, 2.38419e-07, 3.52902)
+octree_octant = 2
+metadata/class = "PlacementTransform"
+
+[sub_resource type="Resource" id="Resource_5pdb6"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = [SubResource("Resource_xppbu"), SubResource("Resource_apyfk"), SubResource("Resource_7asse"), SubResource("Resource_deja1"), SubResource("Resource_khe3i"), SubResource("Resource_lgllo"), SubResource("Resource_2lv72"), SubResource("Resource_tqvrp"), SubResource("Resource_80lfu"), SubResource("Resource_egcox"), SubResource("Resource_ot2hj"), SubResource("Resource_1pti2"), SubResource("Resource_do6v8"), SubResource("Resource_tulwo"), SubResource("Resource_3tjfl"), SubResource("Resource_x8g2i"), SubResource("Resource_0v5ig"), SubResource("Resource_6gau6"), SubResource("Resource_j441m"), SubResource("Resource_7bhia"), SubResource("Resource_qbqjf"), SubResource("Resource_f0j3c"), SubResource("Resource_hcco4"), SubResource("Resource_yyjmg"), SubResource("Resource_2y8dj"), SubResource("Resource_mefbl"), SubResource("Resource_l72xf"), SubResource("Resource_bmcpk"), SubResource("Resource_ihpj5"), SubResource("Resource_fxt7e"), SubResource("Resource_18lb1"), SubResource("Resource_pyoj2"), SubResource("Resource_6416u"), SubResource("Resource_0ouhi"), SubResource("Resource_0nkhx"), SubResource("Resource_m3564"), SubResource("Resource_rxy72"), SubResource("Resource_aivvc"), SubResource("Resource_x6ypu"), SubResource("Resource_pgw2q"), SubResource("Resource_o45tc"), SubResource("Resource_hq77b")]
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(7, -5, 7)
+extent = 16.0
+bounds = AABB(-9, -21, -9, 32, 32, 32)
+max_bounds_to_center_dist = 27.7128
+min_bounds_to_center_dist = 16.0
+active_LOD_index = 0
+MMI_name = "MultiMeshInstance3D31"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_q1dey"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_5pdb6")
+LOD_variants = Array[Resource]([SubResource("Resource_32n05")])
+LOD_max_distance = 9.99
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_3f7xv"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D30"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_b5ipn"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_3f7xv")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_k0y7w"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D26"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_xdn8h"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_k0y7w")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_sxqsg"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D27"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_iow33"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_sxqsg")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_lghxx"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D10"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_0mqbl"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_lghxx")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_pp17d"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D28"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_jfmti"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_pp17d")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_jjr78"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D29"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_x1dpn"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_jjr78")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_ow6p2"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D11"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_uhfjr"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_ow6p2")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_ski18"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D12"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_2gxht"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_ski18")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_qda22"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D13"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_wk1nw"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_qda22")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_tlays"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D14"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_dftjg"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_tlays")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_t854c"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D15"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_elpn2"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_t854c")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_o242v"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D16"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_8m36a"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_o242v")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_p5csf"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D17"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_cmvcl"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_p5csf")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_rjv7b"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D18"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_5d4j4"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_rjv7b")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_d1sqt"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D19"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_2oo3j"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_d1sqt")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_e1t7p"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D20"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_mp5by"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_e1t7p")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_uw4ur"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D21"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_hsdee"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_uw4ur")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_0l8mv"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D22"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_asboe"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_0l8mv")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_rxyml"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D23"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_8jo6k"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_rxyml")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_adhm6"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D24"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_mcaql"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_adhm6")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_g6oc4"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D25"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_4uuqc"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_g6oc4")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_u7ico"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D9"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_v3gb6"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_u7ico")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_wd43l"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D8"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_a6fgo"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_wd43l")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_8c1rc"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D5"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_fmcfx"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_8c1rc")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_jqc08"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D6"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_b5f08"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_jqc08")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_xukdj"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D7"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_0vapp"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_xukdj")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_2mkrr"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D3"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_rf7v3"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_2mkrr")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="Resource" id="Resource_v661i"]
+resource_name = "MMIOctreeNode"
+script = ExtResource("3_h61am")
+members = []
+child_nodes = []
+max_members = 75
+min_leaf_extent = 1.0
+octant = -1
+is_leaf = true
+center_pos = Vector3(0, 0, 0)
+extent = 1.0
+bounds = AABB(-1, -1, -1, 2, 2, 2)
+max_bounds_to_center_dist = 1.73205
+min_bounds_to_center_dist = 1.0
+active_LOD_index = -1
+MMI_name = "MultiMeshInstance3D4"
+metadata/class = "MMIOctreeNode"
+
+[sub_resource type="Resource" id="Resource_b1rba"]
+resource_name = "MMIOctreeManager"
+script = ExtResource("4_7jjvu")
+root_octree_node = SubResource("Resource_v661i")
+LOD_variants = Array[Resource]([])
+LOD_max_distance = 10.0
+LOD_kill_distance = -1.0
+metadata/class = "MMIOctreeManager"
+
+[sub_resource type="MultiMesh" id="MultiMesh_46ink"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_jr10u"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_y6ovo"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_prim2"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_804pg"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_uxxex"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_fn7d8"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_r1j3p"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_5y54i"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_0dsmn"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_70tfy"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_1f3iy"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_eca83"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_umle7"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_psw2h"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_oo1bv"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_pxgt1"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_fj8nv"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_6yhwl"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_7pck6"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_o11xq"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_50bu5"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_n13l4"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_jv3cs"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_3vv06"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_e3ekp"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_k60kc"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_4yajf"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_uacis"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_se748"]
+transform_format = 1
+
+[sub_resource type="MultiMesh" id="MultiMesh_khdqv"]
+transform_format = 1
+instance_count = 42
+mesh = ExtResource("3_q3sta")
+buffer = PackedFloat32Array(0.20572, 0, 0.978611, -1.92682, 0, 1, 0, 2.38419e-07, -0.978611, 0, 0.20572, 1.98739, 0.615111, 0, -0.78844, 1.69532, 0, 1, 0, 0, 0.78844, 0, 0.615111, 1.30238, -0.505896, 0, -0.862595, 2.89035, 0, 1, 0, 0, 0.862595, 0, -0.505896, 3.20501, -0.581943, 0, -0.813229, 0.48932, 0, 1, 0, 1.19209e-07, 0.813229, 0, -0.581943, 3.37582, 0.695888, 0, 0.71815, 2.12116, 0, 1, 0, 2.38419e-07, -0.71815, 0, 0.695888, 6.15784, 0.186056, 0, -0.982539, 5.02311, 0, 1, 0, 1.41561e-07, 0.982539, 0, 0.186056, 3.50505, -0.49666, 0, -0.867945, 4.08651, 0, 1, 0, -1.19209e-07, 0.867945, 0, -0.49666, 4.39508, 0.646181, 0, 0.763184, -0.778926, 0, 1, 0, 0, -0.763184, 0, 0.646181, 3.1658, -0.629546, 0, -0.776963, 0.9721, 0, 1, 0, 1.19209e-07, 0.776963, 0, -0.629546, 5.11585, -0.0789148, 0, 0.996881, 0.583592, 0, 1, 0, 0, -0.996881, 0, -0.0789148, 0.86075, -0.0246268, 0, 0.999697, 0.0482554, 0, 1, 0, -2.38419e-07, -0.999697, 0, -0.0246268, -2.0194, -0.9971, 0, 0.0761078, 0.48435, 0, 1, 0, 0, -0.0761078, 0, -0.9971, 2.19762, -0.173185, 0, -0.984889, -0.656597, 0, 1, 0, 2.38419e-07, 0.984889, 0, -0.173185, 0.418256, 0.391304, 0, -0.920261, -3.46351, 0, 1, 0, -3.72529e-08, 0.920261, 0, 0.391304, -0.488026, -0.999004, 0, -0.044623, 0.958258, 0, 1, 0, 1.19209e-07, 0.044623, 0, -0.999004, -0.842349, 0.723679, 0, 0.690137, 2.1232, 0, 1, 0, -4.76837e-07, -0.690137, 0, 0.723679, -3.28749, -0.737488, 0, 0.675361, 4.01358, 0, 1, 0, -8.9407e-08, -0.675361, 0, -0.737488, -2.28775, -0.525568, 0, -0.850751, 1.62401, 0, 1, 0, 0, 0.850751, 0, -0.525568, -2.55036, -0.813101, 0, 0.582122, 3.74208, 0, 1, 0, -1.19209e-07, -0.582122, 0, -0.813101, -2.28821, 0.867312, 0, -0.497766, -3.71007, 0, 1, 0, -2.38419e-07, 0.497766, 0, 0.867312, -3.35242, 0.674178, 0, -0.738569, -1.08714, 0, 1, 0, -1.19209e-07, 0.738569, 0, 0.674178, -1.36877, 0.546696, 0, 0.837331, -3.72995, 0, 1, 0, 2.38419e-07, -0.837331, 0, 0.546696, -1.07433, -0.894072, 0, 0.447924, -5.79224, 0, 1, 0, -3.57628e-07, -0.447924, 0, -0.894072, -2.27286, -0.0275734, 0, -0.99962, -1.28275, 0, 1, 0, 0, 0.99962, 0, -0.0275734, -0.719042, 0.0806273, 0, -0.996744, -4.34001, 0, 1, 0, -1.19209e-07, 0.996744, 0, 0.0806273, -2.49201, 0.899163, 0, -0.437615, -2.20781, 0, 1, 0, 0, 0.437615, 0, 0.899163, -0.714844, 0.659391, 0, -0.751801, -5.94157, 0, 1, 0, 0, 0.751801, 0, 0.659391, 0.221241, 0.121044, 0, -0.992647, -3.75124, 0, 1, 0, 1.19209e-07, 0.992647, 0, 0.121044, 2.65347, 1, 0, 0.000964077, -5.83869, 0, 1, 0, 0, -0.000964077, 0, 1, 1.9249, 0.309005, 0, -0.951061, -3.37327, 0, 1, 0, 4.76837e-07, 0.951061, 0, 0.309005, 3.64783, 0.015167, -0.0708821, 0.471873, 4.30514, -0.443805, 0.171335, 0.0400018, 4.76837e-07, -0.175288, -0.439931, -0.0604497, 8.0986, 0.306156, 0.420697, 0.599503, 4.49202, 0.469075, -0.611649, 0.189672, 2.38419e-07, 0.562458, 0.281107, -0.484502, 5.96418, -0.442226, 0.448702, 0.186421, 4.11877, -0.226228, -0.413225, 0.457948, 2.38419e-07, 0.430009, 0.244053, 0.432644, 4.81482, -0.832294, 0.174687, -0.463319, 4.55948, 0.386584, -0.337001, -0.821509, 2.38419e-07, -0.309408, -0.89096, 0.21989, 8.87221, -0.00434794, 0.0129276, 0.00017602, 4.03712, 0.00731613, 0.00230706, 0.0112788, -8.9407e-08, 0.0106597, 0.00368959, -0.00766925, -1.7358, 0.204434, -0.317423, 0.127879, 5.6731, 0.293673, 0.239201, 0.124267, 1.19209e-07, -0.175688, 0.0304798, 0.356523, 0.966162, 0.0353498, 0.0410496, -0.0717828, 3.18005, -0.0632492, 0.0637106, 0.00528611, 2.38419e-07, 0.0532671, 0.048408, 0.0539141, 0.337759, 0.0393667, -0.0797691, -0.177713, -5.91791, 0.0769044, 0.172943, -0.0605921, 0, 0.178971, -0.0567677, 0.0651265, 1.18083, -0.764755, 0.559519, 0.186164, -4.19265, -0.178562, 0.0708275, -0.946397, 1.19209e-07, -0.561991, -0.783894, 0.047368, 2.26632, -0.362295, -0.234735, -0.0336024, -3.95222, 0.204962, -0.340847, 0.171176, 1.93715e-07, -0.119248, 0.127319, 0.396305, 4.82817, -0.00366935, -0.115565, -0.0358047, -0.987385, -0.0717705, -0.0267583, 0.0937218, 0, -0.0973977, 0.0240715, -0.0677129, 4.55288, -0.398325, 0.666615, 0.0423343, -6.49139, -0.164283, -0.0499941, -0.758514, 2.38419e-07, -0.64744, -0.397436, 0.166421, 3.52902)
 
 [node name="Node3D" type="Node3D"]
 
@@ -7,7 +1279,114 @@ use_collision = true
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="env"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+layers = 3
 polygon = PackedVector2Array(-6.6513, -4.04098, -5.69753, 4.69356, 5.99872, 4.54296, 6.37521, -10.5668)
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="env"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.162955, 0)
+
+[node name="Gardener" type="Node3D" parent="."]
+script = ExtResource("1_hhml7")
+file_management/garden_work_directory = "res://demo/gardener_work_dir/"
+gardening/gardening_collision_mask = 1.0
+metadata/class = "Gardener"
+
+[node name="Arborist" type="Node3D" parent="Gardener"]
+script = ExtResource("2_hmnyj")
+octree_managers = Array[ExtResource("4_7jjvu")]([SubResource("Resource_q1dey"), SubResource("Resource_b5ipn"), SubResource("Resource_xdn8h"), SubResource("Resource_iow33"), SubResource("Resource_0mqbl"), SubResource("Resource_jfmti"), SubResource("Resource_x1dpn"), SubResource("Resource_uhfjr"), SubResource("Resource_2gxht"), SubResource("Resource_wk1nw"), SubResource("Resource_dftjg"), SubResource("Resource_elpn2"), SubResource("Resource_8m36a"), SubResource("Resource_cmvcl"), SubResource("Resource_5d4j4"), SubResource("Resource_2oo3j"), SubResource("Resource_mp5by"), SubResource("Resource_hsdee"), SubResource("Resource_asboe"), SubResource("Resource_8jo6k"), SubResource("Resource_mcaql"), SubResource("Resource_4uuqc"), SubResource("Resource_v3gb6"), SubResource("Resource_a6fgo"), SubResource("Resource_fmcfx"), SubResource("Resource_b5f08"), SubResource("Resource_0vapp"), SubResource("Resource_rf7v3"), SubResource("Resource_b1rba")])
+metadata/class = "Arborist"
+
+[node name="MMI_container" type="Node3D" parent="Gardener/Arborist"]
+
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_46ink")
+
+[node name="MultiMeshInstance3D2" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_jr10u")
+
+[node name="MultiMeshInstance3D3" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_y6ovo")
+
+[node name="MultiMeshInstance3D4" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_prim2")
+
+[node name="MultiMeshInstance3D5" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_804pg")
+
+[node name="MultiMeshInstance3D6" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_uxxex")
+
+[node name="MultiMeshInstance3D7" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_fn7d8")
+
+[node name="MultiMeshInstance3D8" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_r1j3p")
+
+[node name="MultiMeshInstance3D9" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_5y54i")
+
+[node name="MultiMeshInstance3D10" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_0dsmn")
+
+[node name="MultiMeshInstance3D11" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_70tfy")
+
+[node name="MultiMeshInstance3D12" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_1f3iy")
+
+[node name="MultiMeshInstance3D13" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_eca83")
+
+[node name="MultiMeshInstance3D14" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_umle7")
+
+[node name="MultiMeshInstance3D15" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_psw2h")
+
+[node name="MultiMeshInstance3D16" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_oo1bv")
+
+[node name="MultiMeshInstance3D17" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_pxgt1")
+
+[node name="MultiMeshInstance3D18" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_fj8nv")
+
+[node name="MultiMeshInstance3D19" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_6yhwl")
+
+[node name="MultiMeshInstance3D20" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_7pck6")
+
+[node name="MultiMeshInstance3D21" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_o11xq")
+
+[node name="MultiMeshInstance3D22" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_50bu5")
+
+[node name="MultiMeshInstance3D23" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_n13l4")
+
+[node name="MultiMeshInstance3D24" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_jv3cs")
+
+[node name="MultiMeshInstance3D25" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_3vv06")
+
+[node name="MultiMeshInstance3D26" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_e3ekp")
+
+[node name="MultiMeshInstance3D27" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_k60kc")
+
+[node name="MultiMeshInstance3D28" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_4yajf")
+
+[node name="MultiMeshInstance3D29" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_uacis")
+
+[node name="MultiMeshInstance3D30" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_se748")
+
+[node name="MultiMeshInstance3D31" type="MultiMeshInstance3D" parent="Gardener/Arborist/MMI_container"]
+multimesh = SubResource("MultiMesh_khdqv")

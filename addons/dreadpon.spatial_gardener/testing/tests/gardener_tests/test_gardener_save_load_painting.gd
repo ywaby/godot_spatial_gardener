@@ -8,7 +8,7 @@ var octree_snapshot_check:OctreeSnapshotCheck = null
 
 
 func execute():
-	super.execute()
+	super()
 	logger.info("Executing test")
 	octree_snapshot_check = OctreeSnapshotCheck.new()
 	painting_data = GardenerUtils.populate_node_with_surfaces(self, true, true)

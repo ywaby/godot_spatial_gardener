@@ -10,7 +10,7 @@ class_name Greenhouse
 const ui_category_greenhouse_SCN = preload("../controls/side_panel/ui_category_greenhouse.tscn")
 
 # All the plants (plant states) we have
-var greenhouse_plant_states:Array = []
+var greenhouse_plant_states:Array[Greenhouse_PlantState] = []
 # Keep a reference to selected resource to easily display it
 var selected_for_edit_resource:Resource = null
 
@@ -42,6 +42,7 @@ signal req_octree_recenter(plant, plant_state)
 
 func _init():
 	set_meta("class", "Greenhouse")
+	super()
 	resource_name = "Greenhouse"
 	
 	_add_res_edit_source_array("plant_types/greenhouse_plant_states", "plant_types/selected_for_edit_resource")
@@ -123,16 +124,16 @@ func on_plant_label_edit(index:int, label_text:String):
 
 func select_plant_state_for_brush(index:int, state:bool):
 	if is_instance_valid(grid_container_plant_thumbnails_nd):
-		grid_container_plant_thumbnails_nd.set_thumb_interaction_feature_with_data(UI_Action_Thumbnail.InteractionFlags.CHECK, state, {"index": index})
+		grid_container_plant_thumbnails_nd.set_thumb_interaction_feature_with_data(UI_ActionThumbnail.InteractionFlags.CHECK, state, {"index": index})
 
 
 func set_plant_state_label(index:int, label_text:String):
 	if is_instance_valid(grid_container_plant_thumbnails_nd):
-		grid_container_plant_thumbnails_nd.set_thumb_interaction_feature_with_data(UI_Action_Thumbnail.InteractionFlags.EDIT_LABEL, label_text, {"index": index})
+		grid_container_plant_thumbnails_nd.set_thumb_interaction_feature_with_data(UI_ActionThumbnail.InteractionFlags.EDIT_LABEL, label_text, {"index": index})
 
 
 func on_if_ready(input_field:UI_InputField):
-	super.on_if_ready(input_field)
+	super(input_field)
 	
 	if input_field.prop_name == "plant_types/greenhouse_plant_states":
 		for i in range(0, greenhouse_plant_states.size()):
@@ -219,7 +220,7 @@ func on_prop_action_executed_on_LOD_variant(prop_action, final_val, LOD_variant,
 
 
 func set_undo_redo(val:EditorUndoRedoManager):
-	super.set_undo_redo(val)
+	super(val)
 	for plant_state in greenhouse_plant_states:
 		plant_state.set_undo_redo(_undo_redo)
 

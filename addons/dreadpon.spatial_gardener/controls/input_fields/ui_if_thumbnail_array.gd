@@ -25,7 +25,7 @@ var flex_grid:UI_FlexGridContainer = null
 
 func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settings:Dictionary = {}):
 	set_meta("class", "UI_IF_ThumbnailArray")
-	
+	super(__init_val, __labelText, __prop_name, settings)
 	add_create_inst_button = settings.add_create_inst_button
 	
 	scroll_intermediary = ScrollContainer.new()
@@ -39,9 +39,19 @@ func _init(__init_val,__labelText:String = "NONE",__prop_name:String = "",settin
 
 
 func _ready():
+	super()
+	scroll_intermediary = ScrollContainer.new()
+	scroll_intermediary.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll_intermediary.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll_intermediary.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_SHOW_ALWAYS
+	
+	flex_grid = UI_FlexGridContainer.new()
+	
+	scroll_intermediary.add_child(flex_grid)
+	
+	
 	value_container.add_child(scroll_intermediary)
 	_init_ui()
-
 
 
 
@@ -62,6 +72,7 @@ func _update_ui_to_prop_action(prop_action:PropAction, final_val):
 
 
 func _update_ui_to_val(val):
+	super(val)
 	FunLib.clear_children(flex_grid)
 	
 	if add_create_inst_button:
@@ -77,7 +88,6 @@ func _update_ui_to_val(val):
 		else:
 			flex_grid.get_child(i).set_thumbnail(null)
 	
-	super._update_ui_to_val(val.duplicate())
 
 
 # Set possible interaction features for an action thumbnail

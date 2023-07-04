@@ -546,9 +546,9 @@ func res_edit_update_interaction_features(res_prop:String):
 		var res_val_at_index = array_val[i]
 		
 		if res_val_at_index == res_val:
-			emit_signal("req_change_interaction_feature", res_edit.array_prop, UI_Action_Thumbnail.InteractionFlags.PRESS, true, {"index": i})
+			emit_signal("req_change_interaction_feature", res_edit.array_prop, UI_ActionThumbnail.InteractionFlags.PRESS, true, {"index": i})
 		else:
-			emit_signal("req_change_interaction_feature", res_edit.array_prop, UI_Action_Thumbnail.InteractionFlags.PRESS, false, {"index": i})
+			emit_signal("req_change_interaction_feature", res_edit.array_prop, UI_ActionThumbnail.InteractionFlags.PRESS, false, {"index": i})
 
 
 
